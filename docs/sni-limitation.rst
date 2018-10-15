@@ -23,7 +23,7 @@ The LB using multiple certificates called **SNI TLS Load Balancer**. Correspondi
 
 Among SSL profiles of a specific LB, only one of them is set with attribute "*Default SSL Profile for SNI: Enabled*".
 
-So, **Using two or more SSL profiles of "Default SSL Profile for SNI: Enabled" will cause VS creating failure.** That is the limitation of using multiple SSL profiles.
+So, **Using two or more SSL profiles of "Default SSL Profile for SNI: Enabled" will cause VS creation failure.** That is the limitation of using multiple SSL profiles.
 
 But unfortunately, we have no way on OpenStack dashboard to justify wether or not a certificate has been created as SSL profile of "*Default SSL Profile for SNI: Enabled*" on BIGIP side unless we
 
