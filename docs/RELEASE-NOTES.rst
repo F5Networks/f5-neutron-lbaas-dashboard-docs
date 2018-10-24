@@ -5,14 +5,16 @@
 Release Notes of F5 Dashboard for OpenStack LBaaS
 =================================================
 
-v0.1.0 (Mitaka)
+|version| (Mitaka)
 ------------------------------------
 NOTE: This version of F5 Dashboard for OpenStack LBaaS Agent will support Openstack Mitaka release.
 
 Added Functionality
 ```````````````````
 * SSL Offloading:
+
   - Configure terminated HTTPS load balancer.
+
   - Create Barbican SSL certificate container.
 
 Bug Fixes
@@ -20,5 +22,5 @@ Bug Fixes
 
 Limitations
 ```````````
-* P12 limitation (TODO)
-* SNI limitation (TODO)
+* :ref:`PKCS12 certificate bundle limitation <p12-limitation>`
+* :ref:`Server Name Indication (SNI) limitation <sni-limitation>`
