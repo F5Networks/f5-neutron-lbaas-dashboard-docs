@@ -229,5 +229,4 @@ preview:
 	@echo "Running autobuild. View live edits at:"
 	@echo "  http://0.0.0.0:8000/index.html"
 	@echo ""
-	sphinx-autobuild --host 0.0.0.0 -b html ./ $(BUILDDIR)
 	sphinx-autobuild --host 0.0.0.0 -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
