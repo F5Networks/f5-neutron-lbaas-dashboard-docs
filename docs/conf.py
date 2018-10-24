@@ -82,7 +82,7 @@ html_theme_options = {
 html_title = u'F5 Agent for OpenStack Neutron'
 
 
-version = '0.1.0'
+version = '9.0.0'
 
 rst_epilog = '''
 .. |f5_dashboard_rpm_package| replace:: f5-neutron-lbaas-dashboard-%(version)s-1.el7.noarch.rpm

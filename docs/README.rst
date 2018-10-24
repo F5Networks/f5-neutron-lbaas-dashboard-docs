@@ -31,7 +31,7 @@ It works in conjunction with the `F5 Driver for OpenStack Neutron LBaaS <https:/
 
 .. seealso::
 
-   For more information about how the |dashboard-short| interacts with the Neutron API and BIG-IP devices, see `F5 Dashboard for OpenStack Neutron LBaaS User Guide`_.
+   For more information about how the |dashboard-short| interacts with the Neutron API and BIG-IP devices, see `Configure SSL Offloading On F5 Neutron LBaaS Dashboard`_.
 
 Downloads
 ---------
@@ -64,7 +64,7 @@ RPM
       # If those files are not there, then copy them.
       cp /usr/lib/python2.7/site-packages/f5_neutron_lbaas_dashboard/enabled/_1491_project* /usr/share/openstack-dashboard/openstack_dashboard/local/enabled/
 
-#. Configure Horizon virtual host. (Optional)
+#. Configure Horizon virtual host.
 
    .. parsed-literal::
 
@@ -86,7 +86,7 @@ Use web browser to access Horizon GUI. |dashboard-short| is located at 'Project'
 Guides
 ------
 
-See the `F5 Dashboard for OpenStack Neutron LBaaS User Guide`_ documentation for more information.
+See the `Configure SSL Offloading On F5 Neutron LBaaS Dashboard`_ documentation for more information.
 
 Limitations
 -----------
@@ -105,7 +105,7 @@ If you need to create terminated HTTPS load balancer with SNI enabled, please se
 .. |dashboard-short| replace:: F5 Dashboard
 .. |dashboard-long| replace:: F5 Dashboard for OpenStack Neutron LBaaS
 
-.. _F5 Dashboard for OpenStack Neutron LBaaS User Guide: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/f5-dashboard-guide.html
+.. _Configure SSL Offloading On F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/ssl-offloading-configuration.html
 
 .. |Build Status| image:: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard.svg?branch=stable%2Fmitaka
    :target: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard
