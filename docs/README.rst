@@ -55,7 +55,7 @@ RPM
       curl -L -O |f5_dashboard_rpm_url|
       rpm -ivh |f5_dashboard_rpm_package|
 
-#. Make sure |dashboard-short| has been enabled. If not, please manually copy it to your Horizon 'enabled' directory.
+#. Make sure the install script has enabled |dashboard-short|. If not, please manually copy it to your Horizon 'enabled' directory.
 
    .. parsed-literal::
 
@@ -80,7 +80,7 @@ RPM
 Next Steps
 ``````````
 
-Use web browser to access Horizon GUI. |dashboard-short| is located at 'Project'->'Network'->'Load Balancers'.
+Use web browser to access Horizon GUI. The location of |dashboard-short| is 'Project'->'Network'->'F5 Load Balancers'.
 
 
 Guides
@@ -105,7 +105,7 @@ If you need to create terminated HTTPS load balancer with SNI enabled, please se
 .. |dashboard-short| replace:: F5 Dashboard
 .. |dashboard-long| replace:: F5 Dashboard for OpenStack Neutron LBaaS
 
-.. _Configure SSL Offloading On F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/ssl-offloading-configuration.html
+.. _Configure SSL Offloading On F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/
 
 .. |Build Status| image:: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard.svg?branch=stable%2Fmitaka
    :target: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard

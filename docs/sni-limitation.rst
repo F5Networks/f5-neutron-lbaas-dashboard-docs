@@ -6,14 +6,14 @@ Configure SNI TLS Load Balancer
 Background
 ----------
 
-Creating a new *TERMINATED_HTTPS* load balancer(LB for short) with new certificate(s) on OpenStack dashboard will trigger a new virtual server(VS for short) with new SSL profile(s) to be created on BIGIP side.
+Creating a new *TERMINATED_HTTPS* load balancer(LB for short) with new certificate(s) on OpenStack dashboard will trigger a new virtual server(VS for short) with new SSL profile(s) created on BIGIP side.
 
 It is possible to reuse existing certificates for creating new LB, which will trigger on BIGIP side, reusing existing SSL profiles for creating new VS.
 
-It can be summarized as:
+In summary:
 
 * Relation between certificate and SSL profile is one-to-one.
-* Certificate can be used by multiple LBs just as SSL profile can be used by multiple VSs on BIGIP side.
+* Certificate can associate to multiple LBs just as SSL profile can associate to multiple VSs on BIGIP side.
 
 
 SNI TLS Load Balancer
@@ -21,11 +21,11 @@ SNI TLS Load Balancer
 
 The LB using multiple certificates called **SNI TLS Load Balancer**. Correspondingly, the triggered VS has multiple SSL profiles.
 
-Among SSL profiles of a specific LB, only one of them is set with attribute "*Default SSL Profile for SNI: Enabled*".
+Among SSL profiles of a specific LB, only one of them has attribute "*Default SSL Profile for SNI: Enabled*".
 
-So, **Using two or more SSL profiles of "Default SSL Profile for SNI: Enabled" will cause VS creation failure.** That is the limitation of using multiple SSL profiles.
+**Using two or more SSL profiles of "Default SSL Profile for SNI: Enabled" will cause VS creation failure.** That is the limitation of using multiple SSL profiles.
 
-But unfortunately, there is no way on OpenStack dashboard to determine whether or not a certificate has been created as SSL profile of "*Default SSL Profile for SNI: Enabled*" on BIGIP side unless
+But unfortunately, it is hard for OpenStack dashboard to determine whether or not the SSL profile associated with a certificate does have "*Default SSL Profile for SNI: Enabled*" on BIGIP side, unless:
 
 * On BIGIP side, manually check that SSL profile's attribute, or
 * Name the certificate with special hint(i.e. suffix with _sni_default).
