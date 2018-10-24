@@ -1,0 +1,24 @@
+language: python
+
+python:
+  - '2.7'
+
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker pull f5devcentral/containthedocs
+
+script:
+  - ./scripts/docker-docs.sh ./scripts/test-docs.sh
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    on:
+      branch: master
+      repo: F5Networks/f5-neutron-lbaas-dashboard-docs
+    script:
+      - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack/dashboard v9

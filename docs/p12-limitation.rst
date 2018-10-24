@@ -2,12 +2,10 @@
 
 Configure terminated HTTPS load balancer with PKCS12 certificate bundle
 =======================================================================
-F5 Neutron Lbaas Dashboard support SSL offloading with PEM certificate.
-When use F5 Neutron Lbaas Dashboard to create or update a certificate for listener, the ``server certificate``, ``intermediate certificate``, ``private key`` and ``passphrase`` need
-to be filled into F5 Neutron Lbaas Dashboard.
+F5 Neutron Lbaas Dashboard support SSL offloading with PEM certificate. When use F5 Neutron Lbaas Dashboard to create or update a certificate for listener, user need to input ``server certificate``, ``intermediate certificate``, ``private key`` and ``passphrase`` into F5 Neutron Lbaas Dashboard.
 
 F5 Neutron Lbaas Dashboard does not support load balancer SSL offloading function with PKCS 12 format certificates.
-The PKCS 12 bundle must be extracted before using F5 Neutron Lbaas Dashboard.
+User need to manually extract PKCS 12 bundle before using F5 Neutron Lbaas Dashboard.
 
 1. To extract a PKCS 12 bundle via openssl tool.
 
@@ -27,7 +25,7 @@ The PKCS 12 bundle must be extracted before using F5 Neutron Lbaas Dashboard.
   openssl x509 -in name.pem -noout -text
 
 3. Copy corresponding certificates and private key from extracted file to F5 Neutron Lbaas Dashboard.
-4. If the PKCS 12 bundle is extracted with encrypt private key, the new passphrase also needs to be provide to F5 Neutron Lbaas Dashboard.
+4. For the encrypted private key extracted from PKCS 12 file, user also need to input the passphrase of private key into F5 Neutron Lbaas Dashboard.
 
 Example: Create A PKCS 12 Certificate
 =====================================
@@ -93,10 +91,7 @@ Example: Create A PKCS 12 Certificate
    Enter Export Password: your_password
    Verifying - Enter Export Password: your_password
 
-   # a PKCS 12 ceritficate certificate.pfx is generated, this certificate is used in following examples.
-   certificate.pfx
-
-After the above process, a PKCS 12 ceritficate certificate.pfx is generated, this certificate is used in following examples.
+After generating the PKCS 12 ceritficate certificate.pfx , follow below example steps to extract it.
 
 Example: Extract A PKCS 12 Certificate without Encrypt Private Key
 ==================================================================
@@ -177,13 +172,13 @@ Example: Extract A PKCS 12 Certificate without Encrypt Private Key
   t2Ee3jpA/oUeaQ==
   -----END PRIVATE KEY-----
 
-- Compare each output of ``openssl`` command to the original certificates ``server.pem`` and ``int-ca.pem``, the server and intermediate certificate can be easily found. The private key is regenerated when the PKCS 12 certificate is extracted.
-- When create SSL certificate:
+- Compare each output of ``openssl`` command to the original certificates ``server.pem`` and ``int-ca.pem``, the server and intermediate certificate can be easily found. The private key context is different from the original one, since ``openssl`` command regenerates it when extracting the PKCS 12 file.
+- When creating SSL certificate in F5 LBaaS dashboard:
 
   * Fill the server certificate into the ``Certificate`` box.
   * Fill the intermediate certificate into the ''Certificate Chain'' box.
   * Fill the private key into the ``Private Key`` box.
-  * The private key is not encrypted, when the PKCS 12 is extracted, thus, leave the ``Passphrase`` blank.
+  * The private key is not encrypted, when extracting PKCS 12 file, thus, leave the ``Passphrase`` blank.
   * Click ``Create`` button to create a new SSL certificate for a listener.
 
 Example: Extract A PKCS 12 Certificate with Encrypt Private Key
@@ -267,11 +262,11 @@ Example: Extract A PKCS 12 Certificate with Encrypt Private Key
   tWsKQiEV+c1duKI1sDlPRlOhoQICJMj6EZhGHT+TPBnR+IJNCco0SpQR
   -----END ENCRYPTED PRIVATE KEY-----
 
-- Compare each output of ``openssl`` command to the original certificates ``server.pem`` and ``int-ca.pem``, the server and intermediate certificate can be easily found. The private key is regenerated and encrypted with new passpharse when the PKCS 12 certificate is extracted.
+- Compare each output of ``openssl`` command to the original certificates ``server.pem`` and ``int-ca.pem``, the server and intermediate certificate can be easily found. The command will regenerate private key and encrypt it with new passpharse when user extracting PKCS 12 file.
 - When create SSL certificate:
 
   * Fill the server certificate into the ``Certificate`` box.
   * Fill the intermediate certificate into the ''Certificate Chain'' box.
   * Fill the private key into the ``Private Key`` box.
-  * The private key is encrypted with new passphrase, when the PKCS 12 is extracted, thus, fill the new passphrase into ``Passphrase`` box.
+  * If user encrypt the private key wth a passphrase when extracting PKCS 12 file, fill the passphrase into ``Passphrase`` box.
   * Click ``Create`` button to create a new SSL certificate for a listener.
