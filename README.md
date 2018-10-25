@@ -1,7 +1,7 @@
 # f5-neutron-lbaas-dashboard-docs
 f5-neutron-lbaas-dashboard-docs
 
-[![Build Status](https://travis-ci.org/F5Networks/f5-neutron-lbaas-dashboard-docs.svg?branch=master)](https://travis-ci.org/F5Networks/f5-neutron-lbaas-dash
+[![Build Status](https://travis-ci.org/F5Networks/f5-neutron-lbaas-dashboard-docs.svg?branch=master)](https://travis-ci.org/F5Networks/f5-neutron-lbaas-dash)
 
 Introduction
 ------------
