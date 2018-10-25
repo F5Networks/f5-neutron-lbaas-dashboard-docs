@@ -14,7 +14,7 @@ The relation between certificates added to the |dashboard-short| and BIG-IP SSL 
 SNI TLS Load Balancer
 ---------------------
 
-A Neutron LBaaS load balancer that uses multiple certificates is called an "SNI TLS Load Balancer". The corresponding BIG-IP virtual server also has multiple associated SSL profiles. One of the associated SSL profiles will be marked as the "Default SSL Profile for SNI".
+Neutron refers to a LBaaS load balancer that uses multiple certificates as an "SNI TLS Load Balancer". The corresponding BIG-IP virtual server also has multiple associated SSL profiles. One of the associated SSL profiles will be the "Default SSL Profile for SNI".
 
 .. caution::
 
@@ -22,4 +22,4 @@ A Neutron LBaaS load balancer that uses multiple certificates is called an "SNI 
 
 Because the OpenStack dashboard has no visibility into the state of the BIG-IP device, you need to check the BIG-IP system settings to find out which SSL profile is the default for SNI.
 
-To avoid the potential for default SSL profile conflicts, the recommended deployment option is to only use unique certificates for your SNI TLS load balancers. Do not share any certificate that is used for an SNI TLS load balancer with any other load balancer (SNI TLS or otherwise). If you intend to share one certificate between multiple SNI TLS load balancers, then you need to create a dedicated certificate object in Barbican for each SNI TLS load balancer.
+To avoid the potential for default SSL profile conflicts, the recommended deployment option is to only use unique certificates for your SNI TLS load balancers. Do not share any certificate used for an SNI TLS load balancer with any other load balancer (SNI TLS or otherwise). If you intend to share one certificate between multiple SNI TLS load balancers, then you need to create a dedicated certificate object in Barbican for each SNI TLS load balancer.
