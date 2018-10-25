@@ -1,24 +1,45 @@
 language: python
 
-python:
-  - '2.7'
-
 sudo: required
 
 services:
-  - docker
+- docker
 
-install:
-  - docker pull f5devcentral/containthedocs
+before_install:
+- docker pull f5devcentral/containthedocs:latest
+
+install: 
+- pip install awscli --upgrade
 
 script:
-  - ./scripts/docker-docs.sh ./scripts/test-docs.sh
+- ./scripts/docker-docs.sh ./scripts/test-docs.sh
 
 deploy:
-  - provider: script
-    skip_cleanup: true
-    on:
-      branch: master
-      repo: F5Networks/f5-neutron-lbaas-dashboard-docs
-    script:
-      - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack/lbaasv2-dashboard v9
+# DEPLOY TO STAGING
+- provider: s3
+  skip_cleanup: true
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: clouddocs.f5networks.net
+  local_dir: docs/_build/html
+  upload_dir: openstack/lbaasv2-dashboard/v9
+  on:
+    branch: openstack/lbaasv2-dashboard/v9
+    repo: F5Networks/f5-neutron-lbaas-dashboard-docs
+# DEPLOY TO PRODUCTION
+- provider: s3
+  skip_cleanup: true
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: clouddocs.f5.com
+  local_dir: docs/_build/html
+  upload_dir: openstack/lbaasv2-dashboard/v9
+  on:
+    tags: true
+    repo: F5Networks/f5-neutron-lbaas-dashboard-docs
+# CREATE CLOUDFRONT INVALIDATION IF DEPLOYED TO PRODUCTION
+- provider: script
+  script: aws cloudfront create-invalidation --distribution-id $AWS_DIST_ID --paths /openstack/lbaasv2-dashboard/v9/ 
+  on:
+    tags: true
+
