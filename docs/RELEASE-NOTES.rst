@@ -2,12 +2,12 @@
 
 .. _Release Notes:
 
-Release Notes of F5 Dashboard for OpenStack LBaaS
-=================================================
+Release Notes for F5 Dashboard for OpenStack LBaaS
+==================================================
 
 |version| (Mitaka)
 ------------------------------------
-NOTE: This version of F5 Dashboard for OpenStack LBaaS Agent will support Openstack Mitaka release.
+This version of the F5 Dashboard for OpenStack LBaaS supports the OpenStack Mitaka release.
 
 Added Functionality
 ```````````````````

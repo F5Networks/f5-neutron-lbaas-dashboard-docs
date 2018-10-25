@@ -21,4 +21,4 @@ deploy:
       branch: master
       repo: F5Networks/f5-neutron-lbaas-dashboard-docs
     script:
-      - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack/dashboard v9
+      - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack/lbaasv2-dashboard v9

@@ -31,7 +31,7 @@ It works in conjunction with the `F5 Driver for OpenStack Neutron LBaaS <https:/
 
 .. seealso::
 
-   For more information about how the |dashboard-short| interacts with the Neutron API and BIG-IP devices, see `Configure SSL Offloading On F5 Neutron LBaaS Dashboard`_.
+   For more information about how the |dashboard-short| interacts with the Neutron API and BIG-IP devices, see `Configure SSL Offloading By Using the F5 Neutron LBaaS Dashboard`_.
 
 Downloads
 ---------
@@ -43,50 +43,59 @@ Installation
 
 Follow the instructions for your distribution to install the |dashboard-long| on your Horizon controller.
 
-**Note**: This document assumes that you already have RDO Mitaka release installed as your OpenStack control plane with Horizon and Barbican enabled.
+.. note::
+   This document assumes that you already have RDO Mitaka release installed as your OpenStack control plane with Horizon and Barbican enabled.
 
 RPM
 ```
 
-#. Download and Install |dashboard|.
+#. Download and install |dashboard|.
 
    .. parsed-literal::
 
-      curl -L -O |f5_dashboard_rpm_url|
-      rpm -ivh |f5_dashboard_rpm_package|
+      # curl -L -O |f5_dashboard_rpm_url|
+      # rpm -ivh |f5_dashboard_rpm_package|
 
-#. Make sure the install script has enabled |dashboard-short|. If not, please manually copy it to your Horizon 'enabled' directory.
+#. Verify that the install script successfully enabled the |dashboard-short|. If the dashboard is not enabled, manually copy it to your Horizon 'enabled' directory.
 
-   .. parsed-literal::
+   .. code-block:: bash
+      :emphasize-lines: 2,3,4
 
-      ls /usr/share/openstack-dashboard/openstack_dashboard/local/enabled/_1491_project*
+      # ls /usr/share/openstack-dashboard/openstack_dashboard/local/enabled/_1491_project*
+      /usr/share/openstack-dashboard/openstack_dashboard/local/enabled/_1491_project_ng_loadbalancersv2_panel.py
+      /usr/share/openstack-dashboard/openstack_dashboard/local/enabled/_1491_project_ng_loadbalancersv2_panel.pyc
+      /usr/share/openstack-dashboard/openstack_dashboard/local/enabled/_1491_project_ng_loadbalancersv2_panel.pyo
 
-      # If those files are not there, then copy them.
-      cp /usr/lib/python2.7/site-packages/f5_neutron_lbaas_dashboard/enabled/_1491_project* /usr/share/openstack-dashboard/openstack_dashboard/local/enabled/
+   If the files aren't present, copy them into the Horizon "enabled" directory.
 
-#. Configure Horizon virtual host.
+   .. code-block:: bash
 
-   .. parsed-literal::
+      # cp /usr/lib/python2.7/site-packages/f5_neutron_lbaas_dashboard/enabled/_1491_project* /usr/share/openstack-dashboard/openstack_dashboard/local/enabled/
 
-      sed -i '/  WSGIDaemonProcess/a\  WSGIApplicationGroup %{GLOBAL}'   /etc/httpd/conf.d/15-horizon_vhost.conf
+#. Configure the Horizon virtual host.
+
+   .. code-block:: bash
+
+      # sed -i '/  WSGIDaemonProcess/a\  WSGIApplicationGroup %{GLOBAL}'   /etc/httpd/conf.d/15-horizon_vhost.conf
 
 #. Restart Horizon.
 
+   .. code-block:: bash
 
-   .. parsed-literal::
+      # systemctl restart httpd.service
 
-      systemctl restart httpd.service
+Usage 
+-----
 
-Next Steps
-``````````
+#. Open the Horizon GUI in your web browser.
 
-Use web browser to access Horizon GUI. The location of |dashboard-short| is 'Project'->'Network'->'F5 Load Balancers'.
+#. Go to :menuselection:`Project --> Network --> F5 Load Balancers` to view the F5 LBaaS dashboard.
 
 
 Guides
 ------
 
-See the `Configure SSL Offloading On F5 Neutron LBaaS Dashboard`_ documentation for more information.
+See the `F5 Neutron LBaaS Dashboard`_ documentation for more information.
 
 Limitations
 -----------
@@ -94,18 +103,15 @@ Limitations
 PKCS12 certificate bundle
 `````````````````````````
 
-The current version of |dashboard-short| can not support to import PKCS12 certificate bundle. If you need to use PKCS12 certificate bundle in your load balancer, please see :ref:`Configure terminated HTTPS load balancer with PKCS12 certificate bundle <p12-limitation>`
+The  |dashboard-short| does not support PKCS12 certificate bundle import. If you need to use a PKCS12 certificate bundle in your load balancer, see  :ref:`Configure terminated HTTPS load balancer with PKCS12 certificate bundle <p12-limitation>`.
 
 Server Name Indication (SNI)
 ````````````````````````````
 
-If you need to create terminated HTTPS load balancer with SNI enabled, please see :ref:`Configure SNI load balancer <sni-limitation>`
+If you need to create a load balancer that uses terminated HTTPS with SNI enabled, see :ref:`Configure SNI load balancer <sni-limitation>`.
 
-.. |dashboard| replace:: f5-neutron-lbaas-dashboard
-.. |dashboard-short| replace:: F5 Dashboard
-.. |dashboard-long| replace:: F5 Dashboard for OpenStack Neutron LBaaS
-
-.. _Configure SSL Offloading On F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/
+.. _F5 Neutron LBaaS Dashboard: http://clouddocs.f5.com/cloud/openstack/v1/lbaas/
+.. _Configure SSL Offloading By Using the F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/
 
 .. |Build Status| image:: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard.svg?branch=stable%2Fmitaka
    :target: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard
