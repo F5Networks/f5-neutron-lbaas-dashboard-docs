@@ -22,7 +22,7 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: clouddocs.f5networks.net
   local_dir: docs/_build/html
-  upload_dir: openstack/lbaasv2-dashboard/v9
+  upload_dir: products/openstack/lbaasv2-dashboard/v9
   on:
     branch: openstack/lbaasv2-dashboard/v9
     repo: F5Networks/f5-neutron-lbaas-dashboard-docs
@@ -33,7 +33,7 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: clouddocs.f5.com
   local_dir: docs/_build/html
-  upload_dir: openstack/lbaasv2-dashboard/v9
+  upload_dir: products/openstack/lbaasv2-dashboard/v9
   on:
     tags: true
     repo: F5Networks/f5-neutron-lbaas-dashboard-docs
