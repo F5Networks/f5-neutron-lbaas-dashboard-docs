@@ -6,14 +6,14 @@ f5-neutron-lbaas-dashboard-docs
 Introduction
 ------------
 
-This repo contains the product documentation for the F5 Dashboard for Neutron LBaaS. `_ for more information.
-The documentation is published on `clouddocs.f5.com <http://clouddocs.f5.com/products/openstack/lbaasv2-dashboard/latest>`_.
+This repo contains the product documentation for the F5 Dashboard for Neutron LBaaS. 
+The documentation is published on [clouddocs.f5.com](http://clouddocs.f5.com/products/openstack/lbaasv2-dashboard/latest).
 
 Filing Issues
 -------------
 
 If you find an issue with the documentation, we would love to hear about it.
-Please file an `issue <https://github.com/F5Networks/f5-neutron-lbaas-dashboard-docs/issues>`_ in this repository.
+Please file an [issue](https://github.com/F5Networks/f5-neutron-lbaas-dashboard-docs/issues) in this repository.
 Please tell us as much as you can about what you found, how you found it, your environment, etc.
 Admins will triage your issue and assign it for a fix based on the priority level assigned.
 We also welcome you to file issues for feature requests and to open pull requests with bugfixes.
@@ -21,7 +21,7 @@ We also welcome you to file issues for feature requests and to open pull request
 Contributing
 ------------
 
-See `Contributing <CONTRIBUTING.md>`_.
+See [Contributing](CONTRIBUTING.md).
 
 
 Copyright
@@ -32,7 +32,7 @@ Copyright (c) 2018, F5 Networks, Inc.
 Support
 -------
 
-See `Support <SUPPORT>`_.
+See [Support](SUPPORT).
 
 License
 -------
@@ -55,7 +55,7 @@ limitations under the License.
 Contributor License Agreement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Individuals or business entities who contribute to this project must
-have completed and submitted the `F5 Contributor License
-Agreement <http://clouddocs.f5.com/cloud/openstack/latest/support/cla_landing.html>`_
+have completed and submitted the [F5 Contributor License
+Agreement](http://clouddocs.f5.com/cloud/openstack/latest/support/cla_landing.html)
 to Openstack_CLA@f5.com prior to their code submission being included
 in this project.
