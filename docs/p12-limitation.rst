@@ -1,7 +1,8 @@
 .. _p12-limitation:
 
-Configure terminated HTTPS load balancer with PKCS12 certificate bundle
-=======================================================================
+Configure a Terminated HTTPS Load Balancer with a PKCS12 Certificate Bundle
+===========================================================================
+
 The |dashboard-long| supports SSL offloading using PEM certificates. When you use the |dashboard-short| to create or update the certificate for a listener, you need to provide the following information:
 
 - ``server certificate``,
@@ -11,29 +12,43 @@ The |dashboard-long| supports SSL offloading using PEM certificates. When you us
 
 The |dashboard-short| does not support SSL offloading with PKCS12 certificate bundles. To use a PKCS12 certificate bundle, you need to manually extract the certificates.
 
-1. Use ``openssl`` to extract the PKCS12 bundle.
+Extract the PKCS12 bundle
+``````````````````````````
 
-   .. code-block:: bash
+You can use ``openssl`` to extract the certificates.
 
-      # extract certificate without encrypt private key
-      openssl pkcs12 -in certificate.p12 -out certificate.txt -nodes
+Extract certificates without an encrypted private key:
 
-      # extract certificate with encrypt private key
-      openssl pkcs12 -in certificate.p12 -out certificate.txt
+.. code-block:: bash
 
-2. Verify that the extracted certificates are in PEM format.
+   $ openssl pkcs12 -in certificate.p12 -out certificate.txt -nodes
 
-   .. code-block:: bash
+Extract certificates with an encrypted private key:
 
-      # verify the certificate PEM format
-      openssl x509 -in name.pem -noout -text
+.. code-block:: bash
+   
+   $ openssl pkcs12 -in certificate.p12 -out certificate.txt
 
-3. You can now use the extracted certificates to configure a load balancer with SSL offloading using the |dashboard-short|.
+Verify that the extracted certificates are in PEM format:
+
+.. code-block:: bash
+
+   openssl x509 -in name.pem -noout -text
+
+Configure a Load Balancer
+`````````````````````````
+
+You can now use the extracted certificates to configure a load balancer with SSL offloading using the |dashboard-short|.
 
 To import the SSL certification using the |dashboard-short|, take the following steps:
 
-  * Paste the server certificate into the ``Certificate`` field.
-  * Paste the intermediate certificate into the ``Certificate Chain`` field.
-  * Paste the private key into the ``Private Key`` field.
-  * Paste the private key passphrase into the ``Passphrase`` field, if you encrypt the private key when extracting PKCS12 file. Otherwise, leave the ``Passphrase`` field blank.
-  * Click :guilabel:`Create` to create the SSL certificate.
+* Paste the server certificate into the :guilabel:`Certificate` field.
+* Paste the intermediate certificate into the :guilabel:`Certificate Chain` field.
+* Paste the private key into the :guilabel:`Private Key` field.
+* Paste the private key passphrase into the :guilabel:`Passphrase` field. 
+
+  .. note:: 
+
+     The :guilabel:`Passphrase` field is only required if you encrypted the private key when extracting the PKCS12 files. 
+
+* Click :guilabel:`Create` to create the SSL certificate.
