@@ -3,7 +3,7 @@ F5 Dashboard for OpenStack Neutron LBaaS
 
 .. sidebar:: **OpenStack version:**
 
-   The |dashboard-long| supports OpenStack Mitaka release.
+   The |dashboard-long| supports the OpenStack Mitaka release.
 
 |Build Status|
 
@@ -44,12 +44,13 @@ Installation
 Follow the instructions for your distribution to install the |dashboard-long| on your Horizon controller.
 
 .. note::
-   This document assumes that you already have RDO Mitaka release installed as your OpenStack control plane with Horizon and Barbican enabled.
+
+   This document assumes that you already have the RDO Mitaka release installed as your OpenStack control plane, with Horizon and Barbican enabled.
 
 RPM
 ```
 
-#. Download and install |dashboard|.
+#. Download and install the |dashboard|.
 
    .. parsed-literal::
 
@@ -89,13 +90,14 @@ Usage
 
 #. Open the Horizon GUI in your web browser.
 
-#. Go to :menuselection:`Project --> Network --> F5 Load Balancers` to view the F5 LBaaS dashboard.
+#. Go to :menuselection:`Project --> Network --> F5 Load Balancers` to access the F5 LBaaS dashboard. 
 
+#. `Deploy a Load Balancer with SSL Offloading <cloud/openstack/v1/lbaas/ssl-offloading-configuration.html>`_. 
 
 Guides
 ------
 
-See the `F5 Neutron LBaaS Dashboard`_ documentation for more information.
+See the `F5 Integrations for OpenStack`_ documentation for more information about managing BIG-IP devices from OpenStack.
 
 Limitations
 -----------
@@ -103,12 +105,12 @@ Limitations
 PKCS12 certificate bundle
 `````````````````````````
 
-The  |dashboard-short| does not support PKCS12 certificate bundle import. If you need to use a PKCS12 certificate bundle in your load balancer, see  :ref:`Configure terminated HTTPS load balancer with PKCS12 certificate bundle <p12-limitation>`.
+The  |dashboard-short| does not support PKCS12 certificate bundle import. If you need to use a PKCS12 certificate bundle in your load balancer, see  :ref:`Configure a Terminated HTTPS Load Balancer with a PKCS12 Certificate Bundle <p12-limitation>`.
 
 Server Name Indication (SNI)
 ````````````````````````````
 
-If you need to create a load balancer that uses terminated HTTPS with SNI enabled, see :ref:`Configure SNI load balancer <sni-limitation>`.
+If you need to create a load balancer that uses terminated HTTPS with SNI enabled, see :ref:`Configure a SNI Load Balancer <sni-limitation>`.
 
 .. _F5 Neutron LBaaS Dashboard: http://clouddocs.f5.com/cloud/openstack/v1/lbaas/
 .. _Configure SSL Offloading By Using the F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/
