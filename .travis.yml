@@ -24,7 +24,7 @@ deploy:
   local_dir: docs/_build/html
   upload_dir: products/openstack/lbaasv2-dashboard/v9
   on:
-    branch: openstack/lbaasv2-dashboard/v9
+    branch: v9
     repo: F5Networks/f5-neutron-lbaas-dashboard-docs
 # DEPLOY TO PRODUCTION
 - provider: s3
@@ -42,4 +42,3 @@ deploy:
   script: aws cloudfront create-invalidation --distribution-id $AWS_DIST_ID --paths /openstack/lbaasv2-dashboard/v9/ 
   on:
     tags: true
-
