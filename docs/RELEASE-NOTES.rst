@@ -28,3 +28,4 @@ Limitations
 
 * :ref:`PKCS12 certificate bundle limitation <p12-limitation>`
 * :ref:`Server Name Indication (SNI) limitation <sni-limitation>`
+* :ref:`Error of updating the listener of a terminiated HTTPS load balancer <update-listener-error>`
