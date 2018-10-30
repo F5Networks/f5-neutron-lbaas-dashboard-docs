@@ -97,3 +97,5 @@ rst_epilog = '''
 ''' % {
   'version': version,
 }
+
+linkcheck_ignore = [r'https://review.openstack.org/#.+']
