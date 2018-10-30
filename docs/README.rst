@@ -94,6 +94,10 @@ Usage
 
 #. `Deploy a Load Balancer with SSL Offloading <cloud/openstack/v1/lbaas/ssl-offloading-configuration.html>`_. 
 
+.. caution::
+
+   A `known issue <https://bugs.launchpad.net/neutron/+bug/1720313>`_ of OpenStack Neutron LBaaS may occur, when a user attempts to update a listener with TERMINATED_HTTPS protocol. OpenStack community delivers a patch, `https://review.openstack.org/#/c/518455 <https://review.openstack.org/#/c/518455/>`_, to fix this issue for Queens and higher release version. If you encounter this issue, please contact with your OpenStack verndor to backport the patch to your OpenStack distribution.
+
 Guides
 ------
 
@@ -105,12 +109,12 @@ Limitations
 PKCS12 certificate bundle
 `````````````````````````
 
-The  |dashboard-short| does not support PKCS12 certificate bundle import. If you need to use a PKCS12 certificate bundle in your load balancer, see  :ref:`Configure a Terminated HTTPS Load Balancer with a PKCS12 Certificate Bundle <p12-limitation>`.
+The |dashboard-short| does not support PKCS12 certificate bundle import. If you need to use a PKCS12 certificate bundle in your load balancer, see :ref:`Configure a Terminated HTTPS Load Balancer with a PKCS12 Certificate Bundle <p12-limitation>`.
 
 Server Name Indication (SNI)
 ````````````````````````````
 
-If you need to create a load balancer that uses terminated HTTPS with SNI enabled, see :ref:`Configure a SNI Load Balancer <sni-limitation>`.
+If you need to create a load balancer that uses TERMINATED_HTTPS protocol with SNI enabled, see :ref:`Configure a SNI Load Balancer <sni-limitation>`.
 
 .. _F5 Neutron LBaaS Dashboard: http://clouddocs.f5.com/cloud/openstack/v1/lbaas/
 .. _Configure SSL Offloading By Using the F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/
