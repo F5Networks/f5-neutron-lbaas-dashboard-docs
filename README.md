@@ -1,16 +1,13 @@
 # f5-neutron-lbaas-dashboard-docs
-f5-neutron-lbaas-dashboard-docs
 
-[![Build Status](https://travis-ci.org/F5Networks/f5-neutron-lbaas-dashboard-docs.svg?branch=master)](https://travis-ci.org/F5Networks/f5-neutron-lbaas-dash)
+[![Build Status](https://travis-ci.org/F5Networks/f5-neutron-lbaas-dashboard-docs.svg?branch=master)](https://travis-ci.org/F5Networks/f5-neutron-lbaas-dashboard-docs)
 
-Introduction
-------------
+## Introduction
 
 This repo contains the product documentation for the F5 Dashboard for Neutron LBaaS. 
 The documentation is published on [clouddocs.f5.com](http://clouddocs.f5.com/products/openstack/lbaasv2-dashboard/latest).
 
-Filing Issues
--------------
+## Filing Issues
 
 If you find an issue with the documentation, we would love to hear about it.
 Please file an [issue](https://github.com/F5Networks/f5-neutron-lbaas-dashboard-docs/issues) in this repository.
@@ -18,27 +15,22 @@ Please tell us as much as you can about what you found, how you found it, your e
 Admins will triage your issue and assign it for a fix based on the priority level assigned.
 We also welcome you to file issues for feature requests and to open pull requests with bugfixes.
 
-Contributing
-------------
+## Contributing
 
 See [Contributing](CONTRIBUTING.md).
 
 
-Copyright
----------
+## Copyright
 
 Copyright (c) 2018, F5 Networks, Inc.
 
-Support
--------
+## Support
 
 See [Support](SUPPORT).
 
-License
--------
+## License
 
-Apache V2.0
-~~~~~~~~~~~
+### Apache V2.0
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License. You may obtain
