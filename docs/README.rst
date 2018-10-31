@@ -27,11 +27,11 @@ Version |version|
 :ref:`Release Notes`
 
 The |dashboard-long| (``f5-neutron-lbaas-dashboard``) is an OpenStack `Horizon dashboard plugin <https://docs.openstack.org/security-guide/networking/architecture.html>`_.
-It works in conjunction with the `F5 Driver for OpenStack Neutron LBaaS <https://clouddocs.f5.com/products/openstack/lbaasv2-driver/latest/>`_ and `F5 Agent for OpenStack Neutron LBaaS <https://clouddocs.f5.com/products/openstack/agent/latest/>`_ to manage F5 BIG-IP `Local Traffic Manager <https://f5.com/products/big-ip/local-traffic-manager-ltm>`_ (LTM) services via the OpenStack Neutron API.
+It works in conjunction with the `F5 Driver for OpenStack Neutron LBaaS <https://clouddocs.f5.com/products/openstack/lbaasv2-driver/mitaka/>`_ and `F5 Agent for OpenStack Neutron LBaaS <https://clouddocs.f5.com/products/openstack/agent/latest/>`_ to manage F5 BIG-IP `Local Traffic Manager <https://f5.com/products/big-ip/local-traffic-manager-ltm>`_ (LTM) services via the OpenStack Neutron API.
 
 .. seealso::
 
-   For more information about how the |dashboard-short| interacts with the Neutron API and BIG-IP devices, see `Configure SSL Offloading By Using the F5 Neutron LBaaS Dashboard`_.
+   For more information about how the |dashboard-short| interacts with the Neutron API and BIG-IP devices, see `Configure SSL Offloading On F5 Neutron LBaaS Dashboard`_.
 
 Downloads
 ---------
@@ -92,12 +92,12 @@ Usage
 
 #. Go to :menuselection:`Project --> Network --> F5 Load Balancers` to access the F5 LBaaS dashboard. 
 
-#. `Deploy a Load Balancer with SSL Offloading <cloud/openstack/v1/lbaas/ssl-offloading-configuration.html>`_. 
+#. `Configure SSL Offloading On F5 Neutron LBaaS Dashboard`_.
 
 Guides
 ------
 
-See the `F5 Integrations for OpenStack`_ documentation for more information about managing BIG-IP devices from OpenStack.
+See the `F5 Integrations for OpenStack Neutron LBaaS`_ documentation for more information about managing BIG-IP devices from OpenStack.
 
 Limitations
 -----------
@@ -112,8 +112,8 @@ Server Name Indication (SNI)
 
 If you need to create a load balancer that uses terminated HTTPS with SNI enabled, see :ref:`Configure a SNI Load Balancer <sni-limitation>`.
 
-.. _F5 Neutron LBaaS Dashboard: http://clouddocs.f5.com/cloud/openstack/v1/lbaas/
-.. _Configure SSL Offloading By Using the F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/
+.. _F5 Integrations for OpenStack Neutron LBaaS: http://clouddocs.f5.com/cloud/openstack/v1/lbaas/
+.. _Configure SSL Offloading On F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/ssl-offloading-configuration.html
 
 .. |Build Status| image:: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard.svg?branch=stable%2Fmitaka
    :target: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard
