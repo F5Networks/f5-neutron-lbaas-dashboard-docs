@@ -3,7 +3,7 @@ F5 Dashboard for OpenStack Neutron LBaaS
 
 .. sidebar:: **OpenStack version:**
 
-   The |dashboard-long| supports the OpenStack Mitaka release.
+   |dashboard-long| supports the OpenStack Mitaka release.
 
 |Build Status|
 
@@ -26,12 +26,12 @@ Version |version|
 
 :ref:`Release Notes`
 
-The |dashboard-long| (``f5-neutron-lbaas-dashboard``) is an OpenStack `Horizon dashboard plugin <https://docs.openstack.org/security-guide/networking/architecture.html>`_.
+|dashboard-long| (``f5-neutron-lbaas-dashboard``) is an OpenStack `Horizon dashboard plugin <https://docs.openstack.org/security-guide/networking/architecture.html>`_.
 It works in conjunction with the `F5 Driver for OpenStack Neutron LBaaS <https://clouddocs.f5.com/products/openstack/lbaasv2-driver/mitaka/>`_ and `F5 Agent for OpenStack Neutron LBaaS <https://clouddocs.f5.com/products/openstack/agent/latest/>`_ to manage F5 BIG-IP `Local Traffic Manager <https://f5.com/products/big-ip/local-traffic-manager-ltm>`_ (LTM) services via the OpenStack Neutron API.
 
 .. seealso::
 
-   For more information about how the |dashboard-short| interacts with the Neutron API and BIG-IP devices, see `Configure SSL Offloading On F5 Neutron LBaaS Dashboard`_.
+   For more information about how |dashboard-long| interacts with the Neutron API and BIG-IP devices, see `Configure SSL Offloading On F5 Neutron LBaaS Dashboard`_.
 
 Downloads
 ---------
@@ -41,7 +41,7 @@ Downloads
 Installation
 ------------
 
-Follow the instructions for your distribution to install the |dashboard-long| on your Horizon controller.
+Follow the instructions for your distribution to install |dashboard-long| on your Horizon controller.
 
 .. note::
 
@@ -57,7 +57,7 @@ RPM
       # curl -L -O |f5_dashboard_rpm_url|
       # rpm -ivh |f5_dashboard_rpm_package|
 
-#. Verify that the install script successfully enabled the |dashboard-short|. If the dashboard is not enabled, manually copy it to your Horizon 'enabled' directory.
+#. Verify that the install script successfully enabled |dashboard-long|. If the dashboard is not enabled, manually copy it to your Horizon 'enabled' directory.
 
    .. code-block:: bash
       :emphasize-lines: 2,3,4
@@ -94,6 +94,8 @@ Usage
 
 #. `Configure SSL Offloading On F5 Neutron LBaaS Dashboard`_.
 
+#. `Configure Enhanced Service Definition on F5 Neutron LBaaS Dashboard`_.
+
 .. caution::
 
    A `known issue <https://bugs.launchpad.net/neutron/+bug/1720313>`_ of OpenStack Neutron LBaaS may occur, when a user attempts to update a listener with TERMINATED_HTTPS protocol. OpenStack community delivers a patch, `https://review.openstack.org/#/c/518455 <https://review.openstack.org/#/c/518455/>`_, to fix this issue for Queens and higher release version. If you encounter this issue, please contact with your OpenStack verndor to backport the patch to your OpenStack distribution.
@@ -103,21 +105,9 @@ Guides
 
 See the `F5 Integrations for OpenStack Neutron LBaaS`_ documentation for more information about managing BIG-IP devices from OpenStack.
 
-Limitations
------------
-
-PKCS12 certificate bundle
-`````````````````````````
-
-The |dashboard-short| does not support PKCS12 certificate bundle import. If you need to use a PKCS12 certificate bundle in your load balancer, see :ref:`Configure a Terminated HTTPS Load Balancer with a PKCS12 Certificate Bundle <p12-limitation>`.
-
-Server Name Indication (SNI)
-````````````````````````````
-
-If you need to create a load balancer that uses TERMINATED_HTTPS protocol with SNI enabled, see :ref:`Configure a SNI Load Balancer <sni-limitation>`.
-
 .. _F5 Integrations for OpenStack Neutron LBaaS: http://clouddocs.f5.com/cloud/openstack/v1/lbaas/
 .. _Configure SSL Offloading On F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/ssl-offloading-configuration.html
+.. _Configure Enhanced Service Definition on F5 Neutron LBaaS Dashboard: https://clouddocs.f5.com/cloud/openstack/v1/lbaas/enhanced-service-definitions.html
 
 .. |Build Status| image:: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard.svg?branch=stable%2Fmitaka
    :target: https://travis-ci.org/F5Networks/neutron-lbaas-dashboard
