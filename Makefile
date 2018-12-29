@@ -10,7 +10,7 @@ help:
 .PHONY: docker-preview
 docker-preview:
 	rm -rf docs/_build
-	DOCKER_RUN_ARGS="-p 127.0.0.1:8000:8000" ./scripts/docker-docs.sh make -C docs preview
+	DOCKER_RUN_ARGS="-p 0.0.0.0:8000:8000" ./scripts/docker-docs.sh make -C docs preview
 
 # run docs quality tests in a docker container
 .PHONY: docker-test
