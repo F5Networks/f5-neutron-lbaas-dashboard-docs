@@ -83,12 +83,12 @@ html_title = u'F5 Dashboard for OpenStack Neutron LBaaS'
 short_title = u'F5 Dashboard'
 
 
-version = '9.0.0'
+version = '9.1.0'
 
 rst_epilog = '''
 .. |dashboard| replace:: f5-neutron-lbaas-dashboard
 .. |dashboard-short| replace:: F5 Dashboard
-.. |dashboard-long| replace:: F5 Dashboard for OpenStack Neutron LBaaS
+.. |dashboard-long| replace:: F5 Neutron LBaaS Dashboard
 .. |f5_dashboard_rpm_package| replace:: f5-neutron-lbaas-dashboard-%(version)s-1.el7.noarch.rpm
 .. |f5_dashboard_rpm_url| replace:: https://github.com/F5Networks/neutron-lbaas-dashboard/releases/download/v%(version)s/f5-neutron-lbaas-dashboard-%(version)s-1.el7.noarch.rpm
 .. |rpm-download| raw:: html
